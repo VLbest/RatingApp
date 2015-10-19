@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AdminActivity">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_btn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/tmpl_btn_add"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_btn"
+        android:src="@drawable/tmpl_btn_edit"
+        android:background="@android:color/transparent"
+        android:layout_below="@+id/add_btn"
+        android:layout_alignLeft="@+id/add_btn"
+        android:layout_alignStart="@+id/add_btn" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete_btn"
+        android:src="@drawable/tmpl_btn_delete"
+        android:background="@android:color/transparent"
+        android:layout_below="@+id/edit_btn"
+        android:layout_alignLeft="@+id/edit_btn"
+        android:layout_alignStart="@+id/edit_btn" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quest_list"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/delete_btn"
+        android:layout_toStartOf="@+id/delete_btn"
+        android:layout_below="@+id/add_btn" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/add_btn"
+        android:layout_toStartOf="@+id/add_btn"
+        android:layout_above="@+id/edit_btn" />
+
+</RelativeLayout>

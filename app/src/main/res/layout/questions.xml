@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.QuestionsActivity">
+
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:foregroundGravity="center"
+        android:src="@drawable/bbg_low"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+
+<!-- TODO Change to FrameLayout -->
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/header"
+        android:background="#6969ad"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- TODO detach clickable area from button image probably change to ImageButton -->
+
+    <FrameLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:clickable="true"
+        android:id="@+id/left_frame">
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left"
+            android:background="@drawable/left_btn"
+            android:id="@+id/left_btn">
+        </Button>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:layout_below="@+id/header"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/right_frame">
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical|right"
+            android:gravity="center_vertical|right"
+            android:background="@drawable/right_btn"
+            android:id="@+id/right_btn">
+        </Button>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_toStartOf="@id/right_frame"
+        android:layout_toLeftOf="@id/right_frame"
+        android:layout_toRightOf="@id/left_frame"
+        android:layout_toEndOf="@id/left_frame"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.view.PagerTitleStrip android:id="@+id/pager_title_strip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:textColor="#fff"
+                android:padding="8dp" />
+
+        </android.support.v4.view.ViewPager>
+
+    </FrameLayout>
+
+
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:id="@+id/central_logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center_horizontal|center_vertical"
+        android:src="@drawable/dbe_logo"/>
+
+</RelativeLayout>

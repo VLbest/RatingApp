@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Question"
+            android:id="@+id/quest_text"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_alignBottom="@+id/quest_num"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quest_num"
+            android:src="@drawable/ques_numb"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/very_happy"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/happy"
+                android:layout_toEndOf="@+id/happy"
+                android:background="@android:color/transparent"
+                android:src="@drawable/tmpl_em_very_happy"
+                android:layout_gravity="right|center_vertical"
+                android:clickable="true"
+                android:nestedScrollingEnabled="false" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/happy"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/sad"
+                android:layout_toEndOf="@+id/sad"
+                android:background="@android:color/transparent"
+                android:src="@drawable/tmpl_em_happy"
+                android:layout_gravity="center" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sad"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/very_sad"
+                android:layout_toEndOf="@+id/very_sad"
+                android:background="@android:color/transparent"
+                android:src="@drawable/tmpl_em_sad"
+                android:layout_gravity="center_horizontal|top" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/very_sad"
+                android:background="@android:color/transparent"
+                android:src="@drawable/tmpl_em_very_sad"
+                android:layout_alignTop="@+id/sad"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="left|center_vertical" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
