@@ -6,4 +6,9 @@
     <string name="moyen">moyen</string>
     <string name="bon">bon</string>
     <string name="exellent">exellent</string>
+    <string name="Question">Question</string>
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
 </resources>

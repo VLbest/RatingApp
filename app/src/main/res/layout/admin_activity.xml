@@ -44,7 +44,7 @@
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/delete_btn"
         android:layout_toStartOf="@+id/delete_btn"
-        android:layout_below="@+id/add_btn" />
+        android:layout_below="@+id/delete_btn" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -57,6 +57,17 @@
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/add_btn"
         android:layout_toStartOf="@+id/add_btn"
-        android:layout_above="@+id/edit_btn" />
+        android:layout_above="@+id/show_stat_btn" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/show_stat_btn"
+        android:layout_below="@+id/delete_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@android:drawable/ic_menu_set_as"
+        android:layout_toRightOf="@+id/quest_list"
+        android:layout_toEndOf="@+id/quest_list" />
 
 </RelativeLayout>

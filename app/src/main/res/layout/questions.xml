@@ -4,37 +4,30 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.QuestionsActivity">
+    tools:context=".view.QuestionsActivity"
+    android:background="#673AB7">
 
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scaleType="centerCrop"
-        android:foregroundGravity="center"
-        android:src="@drawable/bbg_low"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true" />
-
-<!-- TODO Change to FrameLayout -->
+    <!-- TODO Change to FrameLayout -->
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:id="@+id/header"
-        android:background="#6969ad"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#512DA8"
+        android:adjustViewBounds="true" />
 
     <!-- TODO detach clickable area from button image probably change to ImageButton -->
 
     <FrameLayout
         android:layout_width="50dp"
         android:layout_height="match_parent"
-        android:layout_below="@+id/header"
         android:clickable="true"
-        android:id="@+id/left_frame">
+        android:id="@+id/left_frame"
+        android:layout_alignBottom="@+id/frameLayout2"
+        android:layout_alignTop="@+id/frameLayout2">
         <Button
             android:layout_width="20dp"
             android:layout_height="30dp"
@@ -49,10 +42,11 @@
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:clickable="true"
-        android:layout_below="@+id/header"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/right_frame">
+        android:id="@+id/right_frame"
+        android:layout_alignTop="@+id/frameLayout2"
+        android:layout_alignBottom="@+id/frameLayout2">
         <Button
             android:layout_width="20dp"
             android:layout_height="30dp"
@@ -65,16 +59,58 @@
     </FrameLayout>
 
     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:id="@+id/progress_frame"
+        android:layout_below="@+id/header"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#673AB7"
+            android:layout_alignBottom="@+id/central_logo"
+            android:layout_toRightOf="@+id/left_frame"
+            android:layout_toEndOf="@+id/left_frame"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentTop="true">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quest_progressBar"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:clickable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Small Text"
+            android:id="@+id/question_indicator"
+            android:layout_margin="4dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF" />
+        </TableRow>
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/header"
         android:layout_toStartOf="@id/right_frame"
         android:layout_toLeftOf="@id/right_frame"
         android:layout_toRightOf="@id/left_frame"
         android:layout_toEndOf="@id/left_frame"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        >
+        android:id="@+id/frameLayout2"
+        android:layout_below="@+id/progress_frame">
 
         <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/pager"
@@ -103,5 +139,26 @@
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center_horizontal|center_vertical"
         android:src="@drawable/dbe_logo"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:id="@+id/reset_btn"
+        android:src="@android:drawable/ic_notification_clear_all"
+        android:layout_alignBottom="@+id/header"
+        android:layout_toStartOf="@+id/right_frame"
+        android:background="#00000000"
+        android:layout_toLeftOf="@+id/right_frame" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Fermer"
+        android:id="@+id/textView2"
+        android:textColor="#FFFFFF"
+        android:layout_alignBottom="@+id/header"
+        android:layout_toStartOf="@+id/reset_btn"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_toLeftOf="@+id/reset_btn" />
 
 </RelativeLayout>

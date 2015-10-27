@@ -20,19 +20,8 @@
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal|top"
-            android:layout_alignBottom="@+id/quest_num"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quest_num"
-            android:src="@drawable/ques_numb"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="0dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -40,7 +29,8 @@
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:gravity="center">
+            android:gravity="center"
+            android:id="@+id/relativeLayout">
 
             <ImageButton
                 android:layout_width="wrap_content"

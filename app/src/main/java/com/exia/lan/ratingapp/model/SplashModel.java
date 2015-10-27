@@ -2,7 +2,7 @@ package com.exia.lan.ratingapp.model;
 
 public class SplashModel extends AbstractlModel {
 
-    private int SPLASH_TIME_OUT = 300;
+    private int SPLASH_TIME_OUT = 1000;
 
     public SplashModel(){
 

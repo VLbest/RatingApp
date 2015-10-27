@@ -3,18 +3,16 @@ package com.exia.lan.ratingapp.utils;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.exia.lan.ratingapp.controller.AbstractQuestion;
-import com.exia.lan.ratingapp.controller.Question;
+import com.exia.lan.ratingapp.view.QuestionsParties.Question;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBHandler extends SQLiteOpenHelper{
-
+public class DBHandler /*extends SQLiteOpenHelper*/{
+/*
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "rating_app.db";
 
@@ -93,6 +91,18 @@ public class DBHandler extends SQLiteOpenHelper{
         db.close();
     }
 
+    public void updateQuestion(Question quest){
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "UPDATE " + TABLE_QUESTIONS + " SET " +
+                COLUMN_RATE_A + " = " + quest.getRating_A() +
+                ", " + COLUMN_RATE_B + " = " + quest.getRating_B() +
+                ", " + COLUMN_RATE_C + " = " + quest.getRating_C() +
+                ", " + COLUMN_RATE_D + " = " + quest.getRating_D() +
+                " WHERE " + COLUMN_QUESTION + " ='" + quest.getQuestion().replace("'", "''") + "';";
+        db.execSQL(query);
+        db.close();
+    }
+
     public Question getQuestionByText(String quest){
         SQLiteDatabase db = getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_QUESTIONS + " WHERE " +
@@ -134,5 +144,5 @@ public class DBHandler extends SQLiteOpenHelper{
         c.close();
         return qs;
     }
-
+*/
 }
