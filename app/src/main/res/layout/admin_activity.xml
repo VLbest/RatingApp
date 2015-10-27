@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AdminActivity">
+    tools:context=".view.AdminActivity"
+    android:background="#673AB7">
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -44,7 +45,9 @@
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/delete_btn"
         android:layout_toStartOf="@+id/delete_btn"
-        android:layout_below="@+id/delete_btn" />
+        android:layout_below="@+id/delete_btn"
+        android:background="#D1C4E9"
+        android:touchscreenBlocksFocus="false" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -57,7 +60,8 @@
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/add_btn"
         android:layout_toStartOf="@+id/add_btn"
-        android:layout_above="@+id/show_stat_btn" />
+        android:layout_above="@+id/show_stat_btn"
+        android:background="#FFFFFF" />
 
     <ImageButton
         android:layout_width="wrap_content"

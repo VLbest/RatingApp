@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.exia.lan.ratingapp.R;
 import com.exia.lan.ratingapp.view.QuestionsParties.Question;
@@ -101,13 +102,26 @@ public class AdminActivity extends AbstractActivity {
     }
 
     private void updateQuestion() {
-        DB.getDBHandler().updateQuestionTextByText(selectedQuestion.getText(), this.editText.getText().toString());
-        this.printData();
+        if(this.editText.getText() != null && selectedQuestion != null){
+            DB.getDBHandler().updateQuestionTextByText(selectedQuestion.getText(), this.editText.getText().toString());
+            this.printData();
+        }else{
+            this.askToChooseQuestion();
+        }
     }
 
     private void deleteQuestion() {
-        DB.getDBHandler().deleteQuestionByText(this.editText.getText().toString());
-        this.printData();
+        if(this.editText.getText() != null && selectedQuestion != null){
+            DB.getDBHandler().deleteQuestionByText(this.editText.getText().toString());
+            this.printData();
+        }else {
+            this.askToChooseQuestion();
+        }
+
+    }
+
+    private void askToChooseQuestion(){
+        Toast.makeText(getApplicationContext(), "Sélectionnez une question", Toast.LENGTH_SHORT).show();
     }
 
     public void printData() {

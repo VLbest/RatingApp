@@ -79,4 +79,8 @@ public class QuestionsSession extends FragmentPagerAdapter{
     public void setMyActivity(QuestionsActivity myActivity) {
         this.myActivity = myActivity;
     }
+
+    public void autoGoToNext(){
+        this.myActivity.Click_right_frame();
+    }
 }

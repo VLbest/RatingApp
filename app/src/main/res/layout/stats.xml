@@ -3,23 +3,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.StatActivity">
+    tools:context=".view.StatActivity"
+    android:background="#512DA8">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enregistrer PDF"
-        android:id="@+id/print_btn"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/linearLayout">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Effacer"
+            android:id="@+id/purge_db_btn"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#FFFFFF"
+            android:background="#FF5722"
+            android:layout_gravity="left|right"
+            android:layout_weight="0"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="4dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enregistrer PDF"
+            android:id="@+id/print_btn"
+            android:textColor="#FFFFFF"
+            android:background="#FF5722"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/purge_db_btn"
+            android:layout_toStartOf="@+id/purge_db_btn"
+            android:layout_weight="0"
+            android:layout_gravity="left"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="4dp" />
+    </LinearLayout>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/print_btn"
-        android:id="@+id/stat_table">
+        android:id="@+id/stat_table"
+        android:background="#673AB7"
+        android:layout_below="@+id/linearLayout">
 
         <TableRow
             android:layout_width="match_parent"
@@ -34,7 +73,8 @@
                 android:text="@string/Question"
                 android:id="@+id/stat_question_coll"
                 android:layout_marginLeft="10dp"
-                android:layout_weight=".40"/>
+                android:layout_weight=".40"
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -42,7 +82,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/A"
                 android:id="@+id/stat_a_rate"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,7 +91,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/B"
                 android:id="@+id/stat_b_rate"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +100,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/C"
                 android:id="@+id/stat_c_rate"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -66,7 +109,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/D"
                 android:id="@+id/stat_d_rate"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:textColor="#FFFFFF" />
         </TableRow>
     </TableLayout>
 
