@@ -11,4 +11,9 @@
     <string name="B">B</string>
     <string name="C">C</string>
     <string name="D">D</string>
+    <string name="Participants">Participants: %1$s </string>
+    <string name="Tres_bien">Très bien: %1$s ( %2$s %%)</string>
+    <string name="Bien">Bien: %1$s ( %2$s %%) </string>
+    <string name="Moyen">Moyen: %1$s ( %2$s %%) </string>
+    <string name="Mauvais">Mauvais: %1$s ( %2$s %%) </string>
 </resources>

@@ -72,8 +72,16 @@ public class QuestionsSession extends FragmentPagerAdapter{
     }
 
     public void endSession() {
+        this.saveAll();
         this.myActivity.endQuestionning();
+    }
 
+    public void saveAll(){
+        for ( I_Question question : questions) {
+            if(question instanceof I_NormalQuestion){
+                this.updateQuestion((I_NormalQuestion)question);
+            }
+        }
     }
 
     public void setMyActivity(QuestionsActivity myActivity) {
@@ -81,6 +89,6 @@ public class QuestionsSession extends FragmentPagerAdapter{
     }
 
     public void autoGoToNext(){
-        this.myActivity.Click_right_frame();
+        this.myActivity.goNext();
     }
 }

@@ -176,6 +176,22 @@ public class QuestionsDBHandler extends SQLiteOpenHelper implements I_QuestionsD
         return qs;
     }
 
+    public void purgeStats(){
+        SQLiteDatabase sqlDB = getWritableDatabase();
+
+        String query = " " +
+                "UPDATE `%s` SET "
+                +   " `%s`= 0 , "
+                +   " `%s`= 0 , "
+                +   " `%s`= 0 , "
+                +   " `%s`= 0 "
+                +   " WHERE 1 ";
+
+        query = String.format(query, TABLE.T_NAME, TABLE.A , TABLE.B, TABLE.C, TABLE.D);
+        sqlDB.execSQL(query);
+        sqlDB.close();
+    }
+
     private String escText(String text){
         return text.replace("'", "''");
     }

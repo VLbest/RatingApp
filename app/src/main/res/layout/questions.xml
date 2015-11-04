@@ -9,18 +9,9 @@
 
 
     <!-- TODO Change to FrameLayout -->
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:id="@+id/header"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="#512DA8"
-        android:adjustViewBounds="true" />
 
     <!-- TODO detach clickable area from button image probably change to ImageButton -->
-
+<!--
     <FrameLayout
         android:layout_width="50dp"
         android:layout_height="match_parent"
@@ -57,6 +48,8 @@
         </Button>
 
     </FrameLayout>
+-->
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -101,35 +94,15 @@
         </TableRow>
     </FrameLayout>
 
-    <FrameLayout
+    <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_toStartOf="@id/right_frame"
-        android:layout_toLeftOf="@id/right_frame"
-        android:layout_toRightOf="@id/left_frame"
-        android:layout_toEndOf="@id/left_frame"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/frameLayout2"
-        android:layout_below="@+id/progress_frame">
-
-        <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <android.support.v4.view.PagerTitleStrip android:id="@+id/pager_title_strip"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:textColor="#fff"
-                android:padding="8dp" />
-
-        </android.support.v4.view.ViewPager>
-
-    </FrameLayout>
-
-
-
+        android:layout_height="50dp"
+        android:id="@+id/header"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#512DA8"
+        android:adjustViewBounds="true" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -139,26 +112,69 @@
         android:layout_centerHorizontal="true"
         android:foregroundGravity="center_horizontal|center_vertical"
         android:src="@drawable/dbe_logo"/>
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:id="@+id/reset_btn"
-        android:src="@android:drawable/ic_notification_clear_all"
-        android:layout_alignBottom="@+id/header"
-        android:layout_toStartOf="@+id/right_frame"
-        android:background="#00000000"
-        android:layout_toLeftOf="@+id/right_frame" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Fermer"
-        android:id="@+id/textView2"
-        android:textColor="#FFFFFF"
-        android:layout_alignBottom="@+id/header"
-        android:layout_toStartOf="@+id/reset_btn"
-        android:gravity="center_vertical|center_horizontal"
-        android:layout_toLeftOf="@+id/reset_btn" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/progress_frame">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/linearLayout2"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Fermer"
+                android:id="@+id/textView2"
+                android:textColor="#FFFFFF"
+                android:layout_alignBottom="@+id/header"
+                android:layout_toStartOf="@+id/reset_btn"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_toLeftOf="@+id/reset_btn"
+                android:layout_gravity="left" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/reset_btn"
+                android:src="@android:drawable/ic_notification_clear_all"
+                android:background="#00000000"
+                android:layout_alignBottom="@+id/linearLayout2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/progress_frame">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/frameLayout2"
+            android:layout_below="@+id/progress_frame">
+
+            <com.exia.lan.ratingapp.view.QuestionsParties.NonSwipeableViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.exia.lan.ratingapp.view.QuestionsParties.NonSwipeableViewPager>
+
+        </FrameLayout>
+    </LinearLayout>
 
 </RelativeLayout>

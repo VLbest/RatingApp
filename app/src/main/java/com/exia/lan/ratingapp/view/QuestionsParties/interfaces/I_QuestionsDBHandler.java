@@ -11,5 +11,6 @@ public interface I_QuestionsDBHandler {
     void deleteQuestionByText(String text);
     void updateQuestionStatByText(String text, char rating);
     List<I_QuestionStatist> getQuestionsStats();
+    void purgeStats();
 
 }

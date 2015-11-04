@@ -1,5 +1,6 @@
 package com.exia.lan.ratingapp.view.QuestionsParties;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,6 +28,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     @InjectView(R.id.reset_btn)
     ImageButton resetBtn;
+    /*
     @InjectView(R.id.left_btn)
     Button leftBtn;
     @InjectView(R.id.left_frame)
@@ -35,15 +37,15 @@ public class QuestionsActivity extends AppCompatActivity {
     Button rightBtn;
     @InjectView(R.id.right_frame)
     FrameLayout rightFrame;
-    @InjectView(R.id.pager_title_strip)
-    PagerTitleStrip pagerTitleStrip;
+    */
+
     @InjectView(R.id.quest_progressBar)
     ProgressBar questProgressBar;
     @InjectView(R.id.question_indicator)
     TextView questionIndicator;
 
     private QuestionsSession pageAdapter;
-    private ViewPager viewPager;
+    private NonSwipeableViewPager viewPager;
     private I_ProsgressIndicator progressIndicator;
 
 
@@ -52,7 +54,6 @@ public class QuestionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.questions);
         ButterKnife.inject(this);
-
         this.initComponents();
     }
 
@@ -60,7 +61,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
         this.pageAdapter = new QuestionsSession(getSupportFragmentManager(), getApplicationContext());
         this.pageAdapter.setMyActivity(this);
-        this.viewPager = (ViewPager) findViewById(R.id.pager);
+        this.viewPager = (NonSwipeableViewPager) findViewById(R.id.pager);
         this.viewPager.setAdapter(this.pageAdapter);
         this.progressIndicator = new ProgressIndicator(questProgressBar, questionIndicator);
         this.progressIndicator.setMaxProgress(this.pageAdapter.getCount());
@@ -69,39 +70,16 @@ public class QuestionsActivity extends AppCompatActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 progressIndicator.onProgresssUpdated(position);
             }
-
             @Override
-            public void onPageSelected(int position) {
-
-            }
-
+            public void onPageSelected(int position) { }
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) { }
         });
     }
 
 
-
-    @OnClick(R.id.left_frame)
-    public void Click_left_frame() {
-        this.viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
-    }
-
-    @OnClick(R.id.left_btn)
-    public void Click_left_btn() {
-        this.Click_left_frame();
-    }
-
-    @OnClick(R.id.right_frame)
-    public void Click_right_frame() {
+    public void goNext(){
         this.viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-    }
-
-    @OnClick(R.id.right_btn)
-    public void Click_right_btn() {
-        this.Click_right_frame();
     }
 
     @OnClick(R.id.reset_btn)

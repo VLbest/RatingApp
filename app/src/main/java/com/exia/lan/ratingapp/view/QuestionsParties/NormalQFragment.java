@@ -61,28 +61,28 @@ public class NormalQFragment extends Fragment implements I_NormalQFragment{
     @OnClick(R.id.very_happy)
     public void Click_very_happy(){
         this.question.setRating_A();
-        this.session.updateQuestion(this.question);
-        this.session.autoGoToNext();
+        //this.session.updateQuestion(this.question);
+        session.autoGoToNext();
     }
 
     @OnClick(R.id.happy)
     public void Click_happy(){
         this.question.setRating_B();
-        this.session.updateQuestion(this.question);
+        //this.session.updateQuestion(this.question);
         this.session.autoGoToNext();
     }
 
     @OnClick(R.id.sad)
     public void Click_sad(){
         this.question.setRating_C();
-        this.session.updateQuestion(this.question);
+        //this.session.updateQuestion(this.question);
         this.session.autoGoToNext();
     }
 
     @OnClick(R.id.very_sad)
     public void Click_very_sad(){
         this.question.setRating_D();
-        this.session.updateQuestion(this.question);
+        //this.session.updateQuestion(this.question);
         this.session.autoGoToNext();
     }
 
